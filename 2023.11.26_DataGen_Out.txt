@@ -1,0 +1,49 @@
+2023-11-26 14:37:18.019228: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:939] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-11-26 14:37:20.509124: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:939] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2023-11-26 14:37:20.512586: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:939] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I1126 14:37:20.615245 140020885337920 pipeline.py:195] Missing pipeline option (runner). Executing pipeline using the default runner: DirectRunner.
+I1126 14:37:24.619546 140020885337920 translations.py:712] ==================== <function annotate_downstream_side_inputs at 0x7f58cbbb2700> ====================
+I1126 14:37:24.624899 140020885337920 translations.py:712] ==================== <function fix_side_input_pcoll_coders at 0x7f58cbbb2820> ====================
+I1126 14:37:24.628520 140020885337920 translations.py:712] ==================== <function pack_combiners at 0x7f58cbbb2d30> ====================
+I1126 14:37:24.634582 140020885337920 translations.py:712] ==================== <function lift_combiners at 0x7f58cbbb2dc0> ====================
+I1126 14:37:24.636675 140020885337920 translations.py:712] ==================== <function expand_sdf at 0x7f58cbbb2f70> ====================
+I1126 14:37:24.641260 140020885337920 translations.py:712] ==================== <function expand_gbk at 0x7f58cbbb3040> ====================
+I1126 14:37:24.644985 140020885337920 translations.py:712] ==================== <function sink_flattens at 0x7f58cbbb3160> ====================
+I1126 14:37:24.647534 140020885337920 translations.py:712] ==================== <function greedily_fuse at 0x7f58cbbb31f0> ====================
+I1126 14:37:24.668737 140020885337920 translations.py:712] ==================== <function read_to_impulse at 0x7f58cbbb3280> ====================
+I1126 14:37:24.669843 140020885337920 translations.py:712] ==================== <function impulse_to_input at 0x7f58cbbb3310> ====================
+I1126 14:37:24.671088 140020885337920 translations.py:712] ==================== <function sort_stages at 0x7f58cbbb3550> ====================
+I1126 14:37:24.674351 140020885337920 translations.py:712] ==================== <function add_impulse_to_dangling_transforms at 0x7f58cbbb3670> ====================
+I1126 14:37:24.675374 140020885337920 translations.py:712] ==================== <function setup_timer_mapping at 0x7f58cbbb34c0> ====================
+I1126 14:37:24.677609 140020885337920 translations.py:712] ==================== <function populate_data_channel_coders at 0x7f58cbbb35e0> ====================
+I1126 14:37:24.723263 140020885337920 statecache.py:234] Creating state cache with size 104857600
+I1126 14:37:24.723879 140020885337920 worker_handlers.py:903] Created Worker handler <apache_beam.runners.portability.fn_api_runner.worker_handlers.EmbeddedWorkerHandler object at 0x7f58cb7b41c0> for environment ref_Environment_default_environment_1 (beam:env:embedded_python:v1, b'')
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Fatal Python error: Aborted
+
+Thread 0x00007f591ba56700 (most recent call first):
+  File "/root/.pyenv/versions/3.9.9/lib/python3.9/threading.py", line 316 in wait
+  File "/root/.pyenv/versions/3.9.9/lib/python3.9/threading.py", line 574 in wait
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/worker/data_plane.py", line 224 in run
+  File "/root/.pyenv/versions/3.9.9/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/root/.pyenv/versions/3.9.9/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Current thread 0x00007f592721b740 (most recent call first):
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/worker/data_plane.py", line 406 in add_to_inverse_output
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/worker/data_plane.py", line 101 in close
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 1223 in _send_input_to_worker
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 1347 in process_bundle
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 1020 in _run_bundle
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 783 in _execute_bundle
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 455 in run_stages
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 224 in run_via_runner_api
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/portability/fn_api_runner/fn_runner.py", line 202 in run_pipeline
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/runners/direct/direct_runner.py", line 128 in run_pipeline
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/pipeline.py", line 585 in run
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/apache_beam/pipeline.py", line 608 in __exit__
+  File "/root/assessment_plan_modeling/ap_parsing/data_gen_main.py", line 164 in main
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/absl/app.py", line 254 in _run_main
+  File "/root/.pyenv/versions/apenv/lib/python3.9/site-packages/absl/app.py", line 308 in run
+  File "/root/assessment_plan_modeling/ap_parsing/data_gen_main.py", line 170 in <module>
+Aborted (core dumped)
