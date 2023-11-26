@@ -5,5 +5,5 @@ gin-config>=0.1
 numpy>=1.19.2
 seqeval
 scikit_learn
-tensorflow==2.7
-tf-models-official==2.7
+tensorflow==2.12
+tf-models-official==2.12
