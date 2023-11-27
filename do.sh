@@ -1,3 +1,8 @@
+# 0 下载数据库的账号：用户名密码设置
+## 使用临时变量：下面这两行输入自己用户名，密码；请修改成自己的。
+username=xxxxx
+passwor=xxxxx
+
 # 1 更新 & 安装一些包
 sudo apt update
 sudo apt upgrade -y
@@ -17,8 +22,7 @@ EOF
 git clone https://github.com/xuanhao44/SUAPCD.git
 mv ~/SUAPCD/assessment_plan_modeling ~/assessment_plan_modeling
 rm -rf SUAPCD
-wget -r -N -c -np --user <username> --ask-password https://physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv.gz
-# 其中 <username> 为自己的用户名；之后还要输入密码。
+wget -r -N -c -np --user $username --ask-password https://physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv.gz <<< "$password"
 gzip -d physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv.gz
 mv physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv assessment_plan_modeling/data/notes.csv
 rm -rf physionet.org
