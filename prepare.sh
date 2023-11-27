@@ -1,7 +1,6 @@
-# 0 下载数据库的账号：用户名密码设置
-## 使用临时变量：下面这两行输入自己用户名，密码；请修改成自己的。
-username=xxxxx
-passwor=xxxxx
+# 0 下载数据库的账号：用户名设置
+## 使用临时变量：下面这行输入自己用户名；请修改成自己的。
+username=shirou
 
 # 1 更新 & 安装一些包
 sudo apt update
@@ -29,18 +28,17 @@ rm -rf physionet.org
 
 ## 4 安装 pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-cat << EOF >> ~/.bashrc
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv virtualenv-init -)"
-EOF
+echo '# pyenv' >> ~/.bashrc
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 exec "$SHELL"
 git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
 git clone https://github.com/pyenv/pyenv-doctor.git $(pyenv root)/plugins/pyenv-doctor
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+exec "$SHELL"
 
 ## 5 设置环境，安装依赖
 pyenv install 3.9.9
