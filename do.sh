@@ -4,8 +4,10 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 # 2 Git 设置
-echo "140.82.113.4 github.com" >> /etc/hosts
-echo "199.232.69.194 github.global.ssl.fastly.net" >> /etc/hosts
+echo '# github
+140.82.113.4 github.com
+199.232.69.194 github.global.ssl.fastly.net
+' >> /etc/hosts
 
 # 3 设置代码和数据
 git clone https://github.com/xuanhao44/SUAPCD.git
@@ -22,17 +24,17 @@ sudo apt install build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev curl \
 libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo '# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv virtualenv-init -)"
+' >> ~/.bashrc
 exec "$SHELL"
 git clone https://github.com/pyenv/pyenv-update.git $(pyenv root)/plugins/pyenv-update
 git clone https://github.com/pyenv/pyenv-doctor.git $(pyenv root)/plugins/pyenv-doctor
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-exec "$SHELL"
-pyenv doctor
 
 ## 5 设置环境，安装依赖
 pyenv install 3.9.9
@@ -58,6 +60,8 @@ sudo ln -s libcudnn.so.8.2.1 libcudnn.so.8
 sudo ln -s libcudnn.so.8 libcudnn.so
 sudo ldconfig -v
 source /etc/profile
-echo 'export PATH=/usr/local/cuda-11.3/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo '# CUDA 11.3
+export PATH=/usr/local/cuda-11.3/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
+' >> ~/.bashrc
 exec "$SHELL"
