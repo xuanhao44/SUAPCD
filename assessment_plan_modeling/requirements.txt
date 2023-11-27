@@ -7,3 +7,4 @@ seqeval
 scikit_learn
 tensorflow==2.12
 tf-models-official==2.12
+python-snappy
