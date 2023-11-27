@@ -1,9 +1,12 @@
-tmux new -s train
+# do 脚本
+## 可直接运行
+## 运行前请先 tmux new -s train
+
+#!/bin/bash
+set -euxo pipefail
 
 # echo 0 | tee /sys/module/nvidia/drivers/pci:nvidia/*/numa_node
 export TF_CPP_MIN_LOG_LEVEL=2
-
-pyenv activate apenv
 
 DATA_DIR="$HOME/assessment_plan_modeling/data"
 TFRECORDS_PATH="${DATA_DIR}/ap_parsing_tf_examples/$(date +%Y%m%d)"

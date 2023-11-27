@@ -1,6 +1,5 @@
-# 0 下载数据库的账号：用户名设置
-## 使用临时变量：下面这行输入自己用户名；请修改成自己的。
-username=shirou
+# prepare 脚本
+## 手动，不可直接执行！
 
 # 1 更新 & 安装一些包
 sudo apt update
@@ -22,12 +21,15 @@ EOF
 git clone https://github.com/xuanhao44/SUAPCD.git
 mv ~/SUAPCD/assessment_plan_modeling ~/assessment_plan_modeling
 rm -rf SUAPCD
-wget -r -N -c -np --user $username --ask-password https://physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv.gz
+## 使用临时变量：在下面两行输入自己的账号密码
+username=xxxxx
+password=xxxxx
+wget -r -N -c -np --user $username --password $password https://physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv.gz
 gzip -d physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv.gz
 mv physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv assessment_plan_modeling/data/notes.csv
 rm -rf physionet.org
 
-## 4 安装 pyenv
+# 4 安装 pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 echo '# pyenv' >> ~/.bashrc
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -41,7 +43,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 exec "$SHELL"
 
-## 5 设置环境，安装依赖
+# 5 设置环境，安装依赖
 pyenv install 3.9.9
 pyenv global 3.9.9
 pyenv virtualenv 3.9.9 apenv
@@ -50,12 +52,12 @@ pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 pip install --upgrade pip
 pip install -r assessment_plan_modeling/requirements.txt
 
-## 6 安装 CUDA（驱动，toolkit）
+# 6 安装 CUDA（驱动，toolkit）
 wget https://developer.download.nvidia.cn/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run
 sudo sh cuda_11.3.1_465.19.01_linux.run
 
-## 7 安装 libcuDNN
-### 先把文件放进来
+# 7 安装 libcuDNN
+## 先把文件放进来
 sudo cp cuda/include/cudnn.h /usr/local/cuda-11.3/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda-11.3/lib64
 sudo chmod a+r /usr/local/cuda-11.3/include/cudnn.h /usr/local/cuda-11.3/lib64/libcudnn*
