@@ -1,0 +1,86 @@
+2023-11-27 02:24:33.168363: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2023-11-27 02:24:33.215423: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-11-27 02:24:33.970558: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+I1127 02:24:35.882646 140218649012032 pipeline.py:195] Missing pipeline option (runner). Executing pipeline using the default runner: DirectRunner.
+I1127 02:24:38.954963 140218649012032 translations.py:712] ==================== <function annotate_downstream_side_inputs at 0x7f872741a430> ====================
+I1127 02:24:38.960273 140218649012032 translations.py:712] ==================== <function fix_side_input_pcoll_coders at 0x7f872741a550> ====================
+I1127 02:24:38.963872 140218649012032 translations.py:712] ==================== <function pack_combiners at 0x7f872741aa60> ====================
+I1127 02:24:38.969837 140218649012032 translations.py:712] ==================== <function lift_combiners at 0x7f872741aaf0> ====================
+I1127 02:24:38.972015 140218649012032 translations.py:712] ==================== <function expand_sdf at 0x7f872741aca0> ====================
+I1127 02:24:38.976617 140218649012032 translations.py:712] ==================== <function expand_gbk at 0x7f872741ad30> ====================
+I1127 02:24:38.980334 140218649012032 translations.py:712] ==================== <function sink_flattens at 0x7f872741ae50> ====================
+I1127 02:24:38.982895 140218649012032 translations.py:712] ==================== <function greedily_fuse at 0x7f872741aee0> ====================
+I1127 02:24:39.004056 140218649012032 translations.py:712] ==================== <function read_to_impulse at 0x7f872741af70> ====================
+I1127 02:24:39.005149 140218649012032 translations.py:712] ==================== <function impulse_to_input at 0x7f872741b040> ====================
+I1127 02:24:39.006397 140218649012032 translations.py:712] ==================== <function sort_stages at 0x7f872741b280> ====================
+I1127 02:24:39.009658 140218649012032 translations.py:712] ==================== <function add_impulse_to_dangling_transforms at 0x7f872741b3a0> ====================
+I1127 02:24:39.010679 140218649012032 translations.py:712] ==================== <function setup_timer_mapping at 0x7f872741b1f0> ====================
+I1127 02:24:39.012914 140218649012032 translations.py:712] ==================== <function populate_data_channel_coders at 0x7f872741b310> ====================
+I1127 02:24:39.060695 140218649012032 statecache.py:234] Creating state cache with size 104857600
+I1127 02:24:39.061554 140218649012032 worker_handlers.py:903] Created Worker handler <apache_beam.runners.portability.fn_api_runner.worker_handlers.EmbeddedWorkerHandler object at 0x7f8726f26490> for environment ref_Environment_default_environment_1 (beam:env:embedded_python:v1, b'')
+I1127 02:26:40.801725 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.PROBLEM_DESCRIPTION) or cur_cluster
+I1127 02:26:40.802073 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802139 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802194 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802245 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802296 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802345 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802394 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802443 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:40.802489 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.PROBLEM_DESCRIPTION) or cur_cluster
+I1127 02:26:53.834333 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834487 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834550 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834603 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834652 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.PROBLEM_DESCRIPTION) or cur_cluster
+I1127 02:26:53.834703 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834753 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834802 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834851 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834899 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.834954 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.835004 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.835052 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.876709 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.876843 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.876905 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.876964 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877016 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.PROBLEM_DESCRIPTION) or cur_cluster
+I1127 02:26:53.877065 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877115 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877164 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877213 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877261 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877310 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877357 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+I1127 02:26:53.877405 140218649012032 augmentation_lib.py:187] Invalid labeled span type (LabeledSpanType.ACTION_ITEM) or cur_cluster
+W1127 02:27:15.336564 140218649012032 tfrecordio.py:59] Couldn't find python-snappy so the implementation of _TFRecordUtil._masked_crc32c is not as fast as it could be.
+I1127 02:29:48.785898 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.790580 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:48.806045 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.808835 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:48.824039 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.826472 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:48.844913 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.847579 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:48.865685 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.868514 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:48.886052 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.888315 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:48.906029 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:48.908476 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.011189 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.013664 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.031945 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.034416 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.051556 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.054252 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.070375 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.073237 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.088157 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.090612 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.103573 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.105999 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.
+I1127 02:29:49.118925 140218649012032 filebasedsink.py:310] Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+I1127 02:29:49.121238 140218649012032 filebasedsink.py:357] Renamed 1 shards in 0.00 seconds.

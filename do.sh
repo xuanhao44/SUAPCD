@@ -18,7 +18,7 @@ mv physionet.org/files/mimiciii/1.4/NOTEEVENTS.csv assessment_plan_modeling/data
 rm -rf physionet.org
 
 ## 4 安装 pyenv
-sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+sudo apt install build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev curl \
 libncursesw5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
