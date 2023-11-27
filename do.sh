@@ -1,4 +1,5 @@
 echo 0 | tee /sys/module/nvidia/drivers/pci:nvidia/*/numa_node
+export TF_CPP_MIN_LOG_LEVEL=2
 
 DATA_DIR="$HOME/assessment_plan_modeling/data"
 TFRECORDS_PATH="${DATA_DIR}/ap_parsing_tf_examples/$(date +%Y%m%d)"
@@ -29,4 +30,4 @@ time PYTHONPATH=$(pwd) python assessment_plan_modeling/ap_parsing/train.py \
   --params_override=${PARAMS_OVERRIDE} \
   --mode=train_and_eval \
   --model_dir=${MODEL_DIR} \
-  --alsologtostderr > ModelTrain_Out_$(date +%Y%m%d-%H%M).txt
+  --alsologtostderr > ModelTrain_Out_$(date +%Y%m%d-%H%M).txt 2> ModelTrain_Error_$(date +%Y%m%d-%H%M).txt
