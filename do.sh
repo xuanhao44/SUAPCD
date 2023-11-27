@@ -1,5 +1,9 @@
-echo 0 | tee /sys/module/nvidia/drivers/pci:nvidia/*/numa_node
+tmux new -s train
+
+# echo 0 | tee /sys/module/nvidia/drivers/pci:nvidia/*/numa_node
 export TF_CPP_MIN_LOG_LEVEL=2
+
+pyenv activate apenv
 
 DATA_DIR="$HOME/assessment_plan_modeling/data"
 TFRECORDS_PATH="${DATA_DIR}/ap_parsing_tf_examples/$(date +%Y%m%d)"
@@ -23,11 +27,11 @@ PARAMS_OVERRIDE="${PARAMS_OVERRIDE},task.train_data.input_path='${TRAIN_DATA}'"
 PARAMS_OVERRIDE="${PARAMS_OVERRIDE},task.validation_data.input_path='${VAL_DATA}'"
 PARAMS_OVERRIDE="${PARAMS_OVERRIDE},trainer.train_steps=5000"
 
-nohup time PYTHONPATH=$(pwd) python assessment_plan_modeling/ap_parsing/train.py \
+time PYTHONPATH=$(pwd) python assessment_plan_modeling/ap_parsing/train.py \
   --experiment=${EXP_TYPE} \
   --config_file="${CONFIG_DIR}/base_ap_parsing_model_config.yaml" \
   --config_file="${CONFIG_DIR}/base_ap_parsing_task_config.yaml" \
   --params_override=${PARAMS_OVERRIDE} \
   --mode=train_and_eval \
   --model_dir=${MODEL_DIR} \
-  --alsologtostderr > ModelTrain_Out_$(date +%Y%m%d-%H%M).txt 2> ModelTrain_Error_$(date +%Y%m%d-%H%M).txt &
+  --alsologtostderr > ModelTrain_Out_$(date +%Y%m%d-%H%M).txt 2> ModelTrain_Error_$(date +%Y%m%d-%H%M).txt
