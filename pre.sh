@@ -34,7 +34,6 @@ pip install -r assessment_plan_modeling/requirements.txt
 conda install -c conda-forge cudatoolkit=11.8 cudnn=8.9.2.26 -y
 mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
-## 检查
 conda deactivate
 
 # 下载数据集
