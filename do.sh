@@ -5,6 +5,8 @@
 #!/bin/bash
 set -euxo pipefail
 
+pyenv activate apenv
+
 # echo 0 | tee /sys/module/nvidia/drivers/pci:nvidia/*/numa_node
 export TF_CPP_MIN_LOG_LEVEL=2
 
