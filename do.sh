@@ -5,11 +5,13 @@
 #!/bin/bash
 set -euxo pipefail
 
+tmux new -s train
 pyenv activate apenv
 
 echo 0 | tee /sys/module/nvidia/drivers/pci:nvidia/*/numa_node
 export TF_CPP_MIN_LOG_LEVEL=2
 
+# generate data
 DATA_DIR="$HOME/assessment_plan_modeling/data"
 TFRECORDS_PATH="${DATA_DIR}/ap_parsing_tf_examples/$(date +%Y%m%d)"
 PYTHONPATH=$(pwd) python assessment_plan_modeling/ap_parsing/data_gen_main.py \
@@ -21,6 +23,7 @@ PYTHONPATH=$(pwd) python assessment_plan_modeling/ap_parsing/data_gen_main.py \
   --n_downsample=100 \
   --max_seq_length=2048
 
+# train model
 EXP_TYPE="ap_parsing"
 CONFIG_DIR="assessment_plan_modeling/ap_parsing/configs"
 MODEL_DIR="${DATA_DIR}/models/model_$(date +%Y%m%d-%H%M)"
@@ -40,3 +43,5 @@ PARAMS_OVERRIDE="${PARAMS_OVERRIDE},trainer.train_steps=5000"
   --mode=train_and_eval \
   --model_dir=${MODEL_DIR} \
   --alsologtostderr) > ModelTrain_Out_$(date +%Y%m%d-%H%M).txt 2> ModelTrain_Error_$(date +%Y%m%d-%H%M).txt
+
+tmux kill-session -t train
