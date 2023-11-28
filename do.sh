@@ -40,5 +40,3 @@ PARAMS_OVERRIDE="${PARAMS_OVERRIDE},trainer.train_steps=5000"
   --mode=train_and_eval \
   --model_dir=${MODEL_DIR} \
   --alsologtostderr) > ModelTrain_Out_$(date +%Y%m%d-%H%M).txt 2> ModelTrain_Error_$(date +%Y%m%d-%H%M).txt
-
-tmux kill-session -t train
